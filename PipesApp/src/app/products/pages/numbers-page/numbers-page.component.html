@@ -1,0 +1,110 @@
+<div class="mt-3">&nbsp;</div>
+<p-panel header="Pipes numéricos">
+    <p class="pb-2">
+        <b>Pipes incluidos en Angular</b> - usualmente presentes en <i>Common Module</i>.
+        <br><br>
+        <span ngNonBindable style="color: var(--primary-color)"><code >{{ dataToTransform | pipe : options? }}</code></span>
+    </p>
+    <div class="col-12 md:col-8">
+        <p-inputGroup>
+            <input type="number" pInputText placeholder="Escribe un número para transformarlo" [value]="stringToNumber" (keyup)="changeNumberToTransform()" #numberToTransformInput/>
+            <p-inputGroupAddon>
+                <span [style]="getArrowsColor()">=> |</span>
+            </p-inputGroupAddon>
+        </p-inputGroup>
+    </div>
+</p-panel>
+
+<div class="grid mt-2">
+
+    <p-card header="| number" subheader="default behaviour en-US" class="col-12 md:col-4">
+        {{ totalSells }} <span style="color: var(--primary-color)"> => | =></span> {{ totalSells | number }}
+        <br/><br/>
+        <p-inputGroup>
+            <p-inputGroupAddon >
+                <span [style]="getArrowsColor()">| =></span>
+            </p-inputGroupAddon>
+            <input type="text" readonly pInputText [value]="this.numberToTransform | number" placeholder="Texto transformado" />
+        </p-inputGroup>
+        <br>
+        <a href="https://angular.io/api/common/DecimalPipe" target="_blank">More info</a>
+    </p-card>
+
+    <p-card header="| number: digitsInfo"  subheader="| number: '1.2-2'" class="col-12 md:col-4">
+        {{ totalSells }} <span style="color: var(--primary-color)"> => | =></span> {{ totalSells | number: '1.2-2'}}
+        <br/><br/>
+        <p-inputGroup>
+            <p-inputGroupAddon >
+                <span [style]="getArrowsColor()">| =></span>
+            </p-inputGroupAddon>
+            <input type="text" readonly pInputText [value]="this.numberToTransform | number: '1.2-2'" placeholder="Texto transformado"/>
+        </p-inputGroup>
+        <br>
+        <a href="https://angular.io/api/common/DecimalPipe#digitsinfo" target="_blank">More info</a>
+    </p-card>
+
+    <p-card header="| number: locale" subheader="| number: 'es'"  class="col-12 md:col-4">
+        {{ totalSells }} <span style="color: var(--primary-color)"> => | =></span> {{ totalSells | number: '1.2-2': 'es'}}
+        <br/><br/>
+        <p-inputGroup>
+            <p-inputGroupAddon >
+                <span [style]="getArrowsColor()">| =></span>
+            </p-inputGroupAddon>
+            <input type="text" readonly pInputText [value]="this.numberToTransform | number: '1.2-2'" placeholder="Texto transformado"/>
+        </p-inputGroup>
+        <br>
+        <a href="https://angular.io/api/common/DecimalPipe#locale" target="_blank">More info</a>
+    </p-card>
+
+    <p-card header="| currency " subheader="default behaviour USD" class="col-12 md:col-4">
+        {{ totalSells }} <span style="color: var(--primary-color)"> => | =></span> {{ totalSells | currency }}
+        <br/><br/>
+        <p-inputGroup>
+            <p-inputGroupAddon >
+                <span [style]="getArrowsColor()">| =></span>
+            </p-inputGroupAddon>
+            <input type="text" readonly pInputText [value]="this.numberToTransform | currency" placeholder="Texto transformado" />
+        </p-inputGroup>
+        <br>
+        <a href="https://angular.io/api/common/CurrencyPipe" target="_blank">More info</a>
+    </p-card>
+
+    <p-card header="| currency: coin:  symbol: display: format" subheader="| currency: 'EUR': 'symbol': '1.2-4': 'es'" class="col-12 md:col-4">
+        {{ totalSells }} <span style="color: var(--primary-color)"> => | =></span> {{ totalSells | currency: 'EUR': 'symbol': '1.2-4': 'es' }}
+        <br/><br/>
+        <p-inputGroup>
+            <p-inputGroupAddon >
+                <span [style]="getArrowsColor()">| =></span>
+            </p-inputGroupAddon>
+            <input type="text" readonly pInputText [value]="this.numberToTransform | currency: 'EUR': 'symbol': '1.2-4': 'es'" placeholder="Texto transformado" />
+        </p-inputGroup>
+        <br>
+        <a href="https://angular.io/api/common/CurrencyPipe" target="_blank">More info</a>
+    </p-card>
+
+    <p-card header="|  currency: coin : display : digitsInfo" subheader="| currency: 'CAD': 'symbol': '1.4-4'"  class="col-12 md:col-4">
+        {{ totalSells }} <span style="color: var(--primary-color)"> => | =></span> {{ totalSells | currency: 'CAD': 'symbol': '1.4-4'}}
+        <br/><br/>
+        <p-inputGroup>
+            <p-inputGroupAddon >
+                <span [style]="getArrowsColor()">| =></span>
+            </p-inputGroupAddon>
+            <input type="text" readonly pInputText [value]="this.numberToTransform | currency: 'CAD': 'symbol': '1.4-4'" placeholder="Texto transformado"/>
+        </p-inputGroup>
+        <br>
+        <a href="https://angular.io/api/common/getCurrencySymbol" target="_blank">More info</a>
+        
+    </p-card>
+
+    <p-card header="| percent " subheader="default percent" class="col-12 md:col-4">
+        {{ percent }} <span style="color: var(--primary-color)"> => | =></span> {{ percent | percent }}
+    </p-card>
+
+    <p-card header="| percent: display " subheader="| percent: '1.2-2'" class="col-12 md:col-4">
+        {{ percent }} <span style="color: var(--primary-color)"> => | =></span> {{ percent | percent: '1.2-2' }}
+    </p-card>
+
+    <p-card header="| percent: display: locale " subheader="| percent: '1.3-4': 'es'" class="col-12 md:col-4">
+        {{ percent }} <span style="color: var(--primary-color)"> => | =></span> {{ percent | percent: '1.3-4': 'es' }}
+    </p-card>
+</div>

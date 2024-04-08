@@ -1,0 +1,74 @@
+<div class="mt-3">&nbsp;</div>
+<p-panel header="Pipes básicos">
+    <p class="pb-2">
+        <b>Pipes incluidos en Angular</b> - usualmente presentes en <i>Common Module</i>.
+        <br><br>
+        <span ngNonBindable style="color: var(--primary-color)"><code >{{ dataToTransform | pipe : options? }}</code></span>
+    </p>
+    <div class="col-12 md:col-8">
+        <!-- <p-inputGroup>
+            <input type="text" pInputText placeholder="Escribe un texto para transformarlo" [value]="textToTransform" (keyup)="changeTextToTransform()" #textToTransformInput/>
+            <p-inputGroupAddon>
+                <span [style]="getArrowsColor()">=> |</span>
+            </p-inputGroupAddon>
+        </p-inputGroup> -->
+    </div>
+</p-panel>
+
+<div class="grid mt-2">
+
+    <div class="col-12 md:col-6">
+        <p-fieldset legend="i18n Select Pipe" [toggleable]="true">
+            <p>
+                Saludos {{ name }}! Es un placer {{ gender | i18nSelect: invitationMap }} a nuestro evento.
+            </p>
+
+            <p-button
+                label="Cambiar persona"
+                (click)="changeClient()">
+            </p-button>
+            <br><br>
+            <a href="https://angular.io/api/common/I18nSelectPipe" target="_blank">More info</a>
+
+        </p-fieldset>
+    </div>
+
+    <div class="col-12 md:col-6">
+        <p-fieldset legend="i18n Plural Pipe" [toggleable]="true">
+            <p>
+                Actualmente {{ clients.length | i18nPlural:clientsMap }}
+            </p>
+
+            <p-button
+                label="Eliminar cliente"
+                (click)="removeClient()">
+            </p-button>
+            <br><br>
+            <a href="https://angular.io/api/common/I18nSelectPipe" target="_blank">More info</a>
+        </p-fieldset>
+    </div>
+    
+    <div class="col-12 md:col-6">
+        <p-fieldset legend="Slice Pipe" [toggleable]="true">
+
+        </p-fieldset>
+    </div>
+
+    <div class="col-12 md:col-6">
+        <p-fieldset legend="Json Pipe" [toggleable]="true">
+
+        </p-fieldset>
+    </div>
+
+    <div class="col-12 md:col-6">
+        <p-fieldset legend="KeyValue Pipe" [toggleable]="true">
+
+        </p-fieldset>
+    </div>
+
+    <div class="col-12 md:col-6">
+        <p-fieldset legend="Async Pipe" [toggleable]="true">
+
+        </p-fieldset>
+    </div>
+</div>

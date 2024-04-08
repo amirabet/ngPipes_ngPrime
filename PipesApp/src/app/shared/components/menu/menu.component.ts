@@ -19,15 +19,21 @@ export class MenuComponent {
         items:[
           {
             label: 'Textos y Fechas',
-            icon: 'pi pi-align-left'
+            icon: 'pi pi-align-left',
+            routerLink: '/',
+            routerLinkActiveOptions: {},
           },
           {
             label: 'Números',
-            icon: 'pi pi-dollar'
+            icon: 'pi pi-dollar',
+            routerLink: 'numbers',
+            routerLinkActiveOptions: {},
           },
           {
             label: 'No comunes',
-            icon: 'pi pi-globe'
+            icon: 'pi pi-globe',
+            routerLink: 'uncommons',
+            routerLinkActiveOptions: {},
           }
         ]
       },
