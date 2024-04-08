@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "@angular/animations": "^17.3.3",
+    "primeng": "^17.12.0"
+  }
+}
