@@ -1,17 +1,16 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { Router, NavigationStart } from '@angular/router';
 
 import { MenuItem } from 'primeng/api';
-import { MenuModule } from 'primeng/menu';
 
 @Component({
   selector: 'shared-menu',
   templateUrl: './menu.component.html'
 })
-export class MenuComponent {
-
+export class MenuComponent implements OnInit {
   public menuItems: MenuItem[] = [];
 
-  ngOnInit(){
+  ngOnInit() {
     this.menuItems = [
       { 
         label: 'Pipes de Angular', 
@@ -20,8 +19,8 @@ export class MenuComponent {
           {
             label: 'Textos y Fechas',
             icon: 'pi pi-align-left',
-            routerLink: '/',
-            routerLinkActiveOptions: {},
+            routerLink: 'basics',
+            routerLinkActiveOptions: { exact: true }
           },
           {
             label: 'Números',
@@ -42,8 +41,14 @@ export class MenuComponent {
         icon: 'pi pi-cog',
         items:[
           {
-            label: 'Otro elemento',
-            icon: 'pi pi-cog'
+            label: 'Custom Pipe',
+            icon: 'pi pi-user-edit',
+            routerLink: 'custom',
+          },
+          {
+            label: 'Ordenación',
+            icon: 'pi pi-sort-alt',
+            routerLink: 'order',
           }
         ]
         }

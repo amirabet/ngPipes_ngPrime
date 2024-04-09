@@ -1,0 +1,65 @@
+<div class="mt-3">&nbsp;</div>
+<p-panel header="Pipes personalizados">
+    <div class="grid">
+        <div class="col-12 md:col-6">
+            <p class="pb-2">
+                <b>Pipes personalizados</b> - creados por el usuario a medida.
+                <br><br>
+                <span ngNonBindable style="color: var(--primary-color)"><code >{{ dataToTransform | custompipe : options? }}</code></span>
+                
+            </p>
+            <pre ngNonBindable>
+import &#123; Pipe, PipeTransform &#125; from "&#64;angular/core";
+
+&#64;Pipe(&#123; name: 'yourPipeName' &#125;)
+export class YourPipe implements PipeTransform &#123;
+    transform( value: string, ...args[]): any &#123;
+        return ...;
+    &#125;
+&#125;
+            </pre>
+            <br>
+            <pre ngNonBindable style="color: var(--primary-color)">
+&#64;Pipe(&#123; name: 'toggleCase' &#125;)
+export class ToggleCasePipe implements PipeTransform &#123;
+
+    transform( value: string, toUpper: boolean = false ): string &#123;
+        return toUpper ? value.toUpperCase() : value.toLowerCase();
+    &#125;
+&#125;
+            </pre>
+        </div>
+    
+        <div class="col-12 md:col-6">
+            <p class="pb-2">
+                <b>Custom pipe</b> <span ngNonBindable style="color: var(--primary-color)"><code> | togglecase</code></span>
+            </p>
+            <p-inputGroup>
+                <input type="text" pInputText placeholder="Escribe un texto para transformarlo" [value]="textToTransform" (keyup)="changeTextToTransform()" #textToTransformInput/>
+                <p-inputGroupAddon>
+                    <span [style]="getArrowsColor()">=> |</span>
+                </p-inputGroupAddon>
+            </p-inputGroup>
+            <br/><br/>
+
+            <span ngNonBindable style="color: var(--primary-color)">| toggleCase : true</span>
+            <br/><br/>
+            <p-inputGroup>
+                <p-inputGroupAddon >
+                    <span [style]="getArrowsColor()">| =></span>
+                </p-inputGroupAddon>
+                <input type="text" readonly pInputText [value]="this.textToTransform | toggleCase : true" placeholder="Texto transformado" />
+            </p-inputGroup>
+            <br/><br/>
+            <span ngNonBindable style="color: var(--primary-color)"> | toggleCase : false</span>
+            <br/><br/>
+            <p-inputGroup>
+                <p-inputGroupAddon >
+                    <span [style]="getArrowsColor()">| =></span>
+                </p-inputGroupAddon>
+                <input type="text" readonly pInputText [value]="this.textToTransform | toggleCase : false" placeholder="Texto transformado" />
+            </p-inputGroup>
+            <br/><br/>
+        </div>
+    </div>
+</p-panel>

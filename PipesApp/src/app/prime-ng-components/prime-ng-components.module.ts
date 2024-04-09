@@ -8,6 +8,8 @@ import { InputGroupAddonModule } from 'primeng/inputgroupaddon';
 import { InputTextModule } from 'primeng/inputtext';
 import { MenubarModule } from 'primeng/menubar';
 import { PanelModule } from 'primeng/panel';
+import { TableModule } from 'primeng/table';
+import { ToolbarModule } from 'primeng/toolbar';
 
 
 
@@ -20,7 +22,9 @@ import { PanelModule } from 'primeng/panel';
     InputGroupAddonModule,
     InputTextModule,
     MenubarModule,
-    PanelModule
+    PanelModule,
+    TableModule,
+    ToolbarModule,
   ]
 })
 export class PrimeNgComponentsModule { }

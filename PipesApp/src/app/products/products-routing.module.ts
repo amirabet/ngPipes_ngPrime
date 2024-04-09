@@ -1,12 +1,15 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+
 import { BasicsPageComponent } from './pages/basics-page/basics-page.component';
+import { CustomPipeComponent } from './pages/custom-pipe/custom-pipe.component';
 import { NumbersPageComponent } from './pages/numbers-page/numbers-page.component';
+import { OrderPageComponent } from './pages/order-page/order-page.component';
 import { UncommonsPageComponent } from './pages/uncommons-page/uncommons-page.component';
 
 const routes: Routes = [
   {
-    path: '',
+    path: 'basics',
     component: BasicsPageComponent
   },
   {
@@ -18,8 +21,16 @@ const routes: Routes = [
     component: UncommonsPageComponent
   },
   {
+    path: 'custom',
+    component: CustomPipeComponent
+  },
+  {
+    path: 'order',
+    component: OrderPageComponent
+  },
+  {
     path: '**',
-    redirectTo: ''
+    redirectTo: 'basics'
   }
 ];
 

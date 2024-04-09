@@ -1,0 +1,4 @@
+.p-menuitem-link-active, .p-menuitem-link-active .p-menuitem-icon, .p-menuitem-link-active .p-menuitem-text
+{
+    color: var(--primary-color);
+}
