@@ -26,8 +26,8 @@
             <tr>
                 <td>{{ heroe.name | toggleCase: isUpperCase: true }}</td>
                 <td>{{ heroe.canFly | canFly: (heroe.gender | i18nSelect: genderMap) }}</td>
-                <td>{{ heroe.color | returnColor }}</td>
-                <td>{{ heroe.gender }}</td>
+                <td>{{ heroe.color | returnColor  | toggleCase: false : true  }}</td>
+                <td>{{ heroe.gender  | toggleCase: false: true }}</td>
             </tr>
         </ng-template>
     </p-table>
