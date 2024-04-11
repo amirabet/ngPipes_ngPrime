@@ -14,7 +14,7 @@
     "copy:browserassets": "copyfiles dist/pipes-app/browser/assets/* ../docs/assets/ -f",
     "copy:media": "copyfiles dist/pipes-app/browser/media/* ../docs/media/ -f",
     "copy:assets": "copyfiles src/assets/* ../docs/assets/ -f",
-    "copy:favicon": "copyfiles *.ico ../docs/ -f"
+    "copy:favicon": "copyfiles src/*.ico ../docs/ -f"
   },
   "private": true,
   "dependencies": {
